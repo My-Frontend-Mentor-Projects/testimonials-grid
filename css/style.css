@@ -1,0 +1,159 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #ecf2f8;
+  font-size: 0.8125rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+h1, h2, h3, h4, h5, a, span, p {
+  padding: 0;
+  margin: 0;
+}
+
+#testimonials {
+  padding: 4.75rem 1.5rem;
+  margin: auto;
+  max-width: 69.375rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: 'testimonial-1' 'testimonial-2' 'testimonial-3' 'testimonial-4' 'testimonial-5';
+  gap: 1rem;
+}
+
+@media (min-width: 40em) {
+  #testimonials {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 'testimonial-1 testimonial-1' 'testimonial-2 testimonial-3' 'testimonial-4 testimonial-4' 'testimonial-5 testimonial-5';
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  #testimonials {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 'testimonial-1 testimonial-1 testimonial-2 testimonial-5' 'testimonial-3 testimonial-4 testimonial-4 testimonial-5';
+  }
+}
+
+@media (min-width: 87.5em) {
+  #testimonials {
+    padding: 10.25rem 0;
+  }
+}
+
+#testimonials .testimonial {
+  border-radius: 0.3rem;
+  padding: 1.875rem 2.0625rem;
+  box-shadow: 10px 15px 15px #cfcfcf;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  grid-template-rows: minmax(2rem, max-content) minmax(2rem, max-content) 1fr;
+  grid-template-areas: "person-image person-name" "review-title review-title" "review-paragraph review-paragraph";
+  gap: 1rem;
+}
+
+#testimonials .testimonial-person-image {
+  grid-area: person-image;
+}
+
+#testimonials .testimonial-person-image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#testimonials .testimonial-person-name {
+  grid-area: person-name;
+}
+
+#testimonials .testimonial-person-name span {
+  display: block;
+}
+
+#testimonials .testimonial-person-name .verified {
+  font-size: 0.69rem;
+}
+
+#testimonials .testimonial-review-title {
+  grid-area: review-title;
+}
+
+#testimonials .testimonial-review-paragraph {
+  grid-area: review-paragraph;
+}
+
+#testimonials #testimonial-1 {
+  grid-area: testimonial-1;
+  background-color: #7541c8;
+}
+
+#testimonials #testimonial-1 .testimonial-person-image img {
+  border: 2px solid rgba(207, 207, 207, 0.5);
+}
+
+#testimonials #testimonial-2 {
+  grid-area: testimonial-2;
+  background-color: #48556a;
+}
+
+#testimonials #testimonial-3 {
+  grid-area: testimonial-3;
+  background-color: white;
+}
+
+#testimonials #testimonial-4 {
+  grid-area: testimonial-4;
+  background-color: #19212e;
+}
+
+#testimonials #testimonial-4 .testimonial-person-image img {
+  border: 2px solid #7541c8;
+}
+
+#testimonials #testimonial-5 {
+  grid-area: testimonial-5;
+  background-color: white;
+}
+
+#testimonials #testimonial-1 .name, #testimonials #testimonial-2 .name, #testimonials #testimonial-4 .name {
+  color: white;
+}
+
+#testimonials #testimonial-1 .verified, #testimonials #testimonial-2 .verified, #testimonials #testimonial-4 .verified {
+  color: rgba(207, 207, 207, 0.5);
+}
+
+#testimonials #testimonial-1 .testimonial-review-title, #testimonials #testimonial-2 .testimonial-review-title, #testimonials #testimonial-4 .testimonial-review-title {
+  color: white;
+}
+
+#testimonials #testimonial-1 .testimonial-review-paragraph, #testimonials #testimonial-2 .testimonial-review-paragraph, #testimonials #testimonial-4 .testimonial-review-paragraph {
+  color: rgba(207, 207, 207, 0.75);
+}
+
+#testimonials #testimonial-3 .name, #testimonials #testimonial-5 .name {
+  color: #48556a;
+}
+
+#testimonials #testimonial-3 .verified, #testimonials #testimonial-5 .verified {
+  color: rgba(72, 85, 106, 0.75);
+}
+
+#testimonials #testimonial-3 .testimonial-review-title, #testimonials #testimonial-5 .testimonial-review-title {
+  color: #48556a;
+}
+
+#testimonials #testimonial-3 .testimonial-review-paragraph, #testimonials #testimonial-5 .testimonial-review-paragraph {
+  color: rgba(72, 85, 106, 0.75);
+}
+/*# sourceMappingURL=style.css.map */

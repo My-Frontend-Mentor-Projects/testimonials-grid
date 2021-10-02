@@ -1,0 +1,173 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $lightGrayishBlue;
+    font-size: $fontBody;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+h1, h2, h3, h4, h5, a, span, p {
+    padding: 0;
+    margin: 0;
+}
+
+#testimonials {
+    padding: 4.75rem 1.5rem;
+    margin: auto;
+    max-width: 69.375rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    'testimonial-1'
+    'testimonial-2'
+    'testimonial-3'
+    'testimonial-4'
+    'testimonial-5';
+    gap: 1rem;
+
+    @include breakpoint-up(medium) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        'testimonial-1 testimonial-1'
+        'testimonial-2 testimonial-3'
+        'testimonial-4 testimonial-4'
+        'testimonial-5 testimonial-5';
+        gap: 2rem;
+    }
+
+    @include breakpoint-up(large) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        'testimonial-1 testimonial-1 testimonial-2 testimonial-5'
+        'testimonial-3 testimonial-4 testimonial-4 testimonial-5';
+    }
+
+    @include breakpoint-up(xlarge) {
+        padding: 10.25rem 0;
+    }
+
+    .testimonial {
+        border-radius: 0.3rem;
+        padding: 1.875rem 2.0625rem;
+        box-shadow: 10px 15px 15px $lightGray;
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        grid-template-rows: minmax(2rem, max-content) minmax(2rem, max-content) 1fr;
+        grid-template-areas: 
+        "person-image person-name"
+        "review-title review-title"
+        "review-paragraph review-paragraph";
+        gap: 1rem;
+
+        &-person-image {
+            grid-area: person-image;
+            
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        &-person-name {
+            grid-area: person-name;
+
+            span {
+                display: block;
+            }
+
+            .verified {
+                font-size: 0.69rem;
+            }
+
+        }
+
+        &-review-title {
+            grid-area: review-title;
+        }
+
+        &-review-paragraph {
+            grid-area: review-paragraph;
+        }
+
+    }
+
+
+    #testimonial-1 {
+        grid-area: testimonial-1;
+        background-color: $moderateViolet;
+
+        .testimonial-person-image img {
+            border: 2px solid $lightGray50;
+        }
+    }
+
+    #testimonial-2 {
+        grid-area: testimonial-2;
+        background-color: $veryDarkGrayishBlue;
+    }
+
+    #testimonial-3 {
+        grid-area: testimonial-3;
+        background-color: $white;
+    }
+
+    #testimonial-4 {
+        grid-area: testimonial-4;
+        background-color: $veryDarkBlackishBlue;
+
+        .testimonial-person-image img {
+            border: 2px solid $moderateViolet;
+        }
+    }
+
+    #testimonial-5 {
+        grid-area: testimonial-5;
+        background-color: $white;
+    }
+
+    #testimonial-1, #testimonial-2, #testimonial-4 {
+        .name {
+            color: $white;
+        }
+        
+        .verified {
+            color: $lightGray50;
+        }
+        .testimonial-review-title {
+            color: $white;
+        }
+
+
+        .testimonial-review-paragraph {
+            color: $lightGray75;
+        }
+    }
+
+    #testimonial-3, #testimonial-5 {
+        .name {
+            color: $veryDarkGrayishBlue;
+        }
+
+        .verified {
+            color: $veryDarkGrayishBlue75;
+        }
+        
+        .testimonial-review-title {
+            color: $veryDarkGrayishBlue;
+        }
+
+        .testimonial-review-paragraph {
+            color: $veryDarkGrayishBlue75
+        }
+    }
+}
